@@ -55,9 +55,7 @@ else:
     pword = "GET YOUR PASSWORD"
 
     s.login(emailFrom, pword)
-
     s.sendmail(emailFrom, emailTo, msg.as_string())
-
     s.quit()
 
 driver.quit()
