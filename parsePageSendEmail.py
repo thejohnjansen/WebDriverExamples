@@ -17,7 +17,9 @@ driveroptions.binary_location = "C:\\Program Files (x86)\\Microsoft\\Edge\\Appli
 
 service = Service("c:\\drivers\\msedgedriver.exe")
 driver = webdriver.Edge(options=driveroptions, service=service)
-driver.get("https://snohomish-county-coronavirus-response-snoco-gis.hub.arcgis.com/pages/covid-19-vaccine")
+
+url = "https://bing.com"
+driver.get(url)
 
 wait = WebDriverWait(driver, 10)
 men_menu = wait.until(ec.visibility_of_element_located((By.XPATH, 
@@ -30,7 +32,7 @@ if textToChange in men_menu:
     print("Found it. Not able to get an appointment yet.")
 else: 
     emailText = "You can make an appt now."
-    emailHTML = "Here is the <a href='https://snohomish-county-coronavirus-response-snoco-gis.hub.arcgis.com/pages/covid-19-vaccine'>link</a>."
+    emailHTML = "Here is the <a href='foo.htm'>link</a>."
 
     emailFrom = "johnjansen@live.com"
     emailTo = "jncjansen@msn.com"
