@@ -32,12 +32,15 @@ else:
     emailText = "You can make an appt now."
     emailHTML = "Here is the <a href='https://snohomish-county-coronavirus-response-snoco-gis.hub.arcgis.com/pages/covid-19-vaccine'>link</a>."
 
+    emailFrom = "johnjansen@live.com"
+    emailTo = "jncjansen@msn.com"
+
     msg = MIMEMultipart('alternative')
     msg.attach(MIMEText(emailText, 'plain'))
     msg.attach(MIMEText(emailHTML, 'html'))
     
-    msg['From'] = "johnjansen@live.com"
-    msg['To'] = "jncjansen@msn.com"
+    msg['From'] = emailFrom
+    msg['To'] = emailTo
     msg['Subject'] = "Testing things"
 
     s = smtplib.SMTP("smtp.live.com",587)
@@ -48,8 +51,6 @@ else:
     # when I did that, I got a prompt from Authenticator on my phone with an "App" password to use
     # so I entered that here
     pword = "GET YOUR PASSWORD"
-    emailFrom = "johnjansen@live.com"
-    emailTo = "jncjansen@msn.com"
 
     s.login(emailFrom, pword)
 
