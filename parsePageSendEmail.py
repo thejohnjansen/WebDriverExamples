@@ -10,9 +10,12 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+mobile_emulation = { "deviceName": "Nexus 5" }
+
 driveroptions = Options()
 driveroptions.use_chromium = True
-driveroptions.add_argument("--headless")
+#driveroptions.add_argument("--headless")
+driveroptions.add_experimental_option("mobileEmulation", mobile_emulation)
 driveroptions.binary_location = "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
 
 service = Service("c:\\drivers\\msedgedriver.exe")
